@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@drawable/gradient_background"
+        tools:context=".ui.detail.DetailFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_weather_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textSize="25sp"
+                android:textColor="@android:color/white"
+                tools:text="@tools:sample/lorem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/tv_weather_desc"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                tools:text="@tools:sample/lorem" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:translationZ="@dimen/spacing_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/img_icon"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_weather_min_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        tools:text="13" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/min_temp"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        tools:text="min Temp" />
+
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_weather_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        tools:text="13" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/current_temp"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        tools:text="current Temp" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/max_weather_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:text="@string/max_temp"
+                        tools:text="13" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/max_temp"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        tools:text="max_temp" />
+
+                </LinearLayout>
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/date"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    tools:text="Date : " />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_weather_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="20sp"
+                    tools:text="@tools:sample/lorem" />
+
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/wind"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                tools:text="wind : " />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_weather_wind"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="20sp"
+                tools:text="@tools:sample/lorem" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

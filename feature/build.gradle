@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 30
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(":base")
+    implementation project(":domain")
+    implementation project(":common")
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Material
+    api "com.google.android.material:material:$material"
+
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navComponentVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navComponentVersion"
+
+    // Leak Canary
+    // debugImplementation because LeakCanary should only run in debug builds.
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanary"
+
+    // Core
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.core:core-ktx:$ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+
+    // JetPack
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_viewmodel"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_livedata_ktx"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_runtime"
+
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+
+
+    // Hilt dependencies
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Test
+    testImplementation "junit:junit:$junitVersion"
+    // testImplementation for pure JVM unit tests
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
+    // Run Blocking Test
+    testImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
+    // Truth
+    testImplementation "com.google.truth:truth:$truthVersion"
+    // For small test - large test annotations
+    testImplementation "androidx.test:runner:$testRunnerVersion"
+    // Mock objects
+    testImplementation "io.mockk:mockk:$mockkVersion"
+    // For Flow test
+    testImplementation "app.cash.turbine:turbine:$turbineVersion"
+}

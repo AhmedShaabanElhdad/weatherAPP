@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="temperatuer">"Temperatuer : "</string>
+    <string name="date">"Date : "</string>
+    <string name="more">See More</string>
+    <string name="desc">Description</string>
+    <string name="list">List</string>
+    <string name="chart">Chart</string>
+    <string name="enter_city">enter your city ...</string>
+    <string name="invalid_city">must not be empty</string>
+    <string name="required_location">We Need Permission to get Current location</string>
+    <string name="current_temp">current</string>
+    <string name="min_temp">min</string>
+    <string name="max_temp">max</string>
+    <string name="wind">wind Spead</string>
+</resources>

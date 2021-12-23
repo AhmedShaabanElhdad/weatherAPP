@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/drawable/gradient_background.xml" value="0.25435897435897437" />
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/drawable/ic_search_24.xml" value="0.25435897435897437" />
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/drawable/shape_rect_round_cnr_white_bg_gray_border_1dp.xml" value="0.25435897435897437" />
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/layout/activity_main.xml" value="0.2421875" />
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/layout/fragment_detail.xml" value="0.176" />
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/layout/fragment_main.xml" value="0.19907407407407407" />
+        <entry key="..\:/Users/a.shaaban/AndroidStudioProjects/WeatherApplication/feature/src/main/res/layout/row_weather_item_layout.xml" value="0.2421875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="15" project-jdk-type="JavaSDK" />
+</project>

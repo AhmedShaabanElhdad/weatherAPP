@@ -1,0 +1,29 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    plugins {
+        id 'com.android.application' version '7.1.0-alpha11'
+        id 'com.android.library' version '7.1.0-alpha11'
+        id 'org.jetbrains.kotlin.android' version '1.5.20'
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+rootProject.name = "WeatherApplication"
+include ':app'
+include ':domain'
+include ':data'
+include ':feature'
+include ':local'
+include ':remote'
+include ':common'
+include ':base'
