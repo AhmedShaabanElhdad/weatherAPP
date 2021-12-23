@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -52,6 +53,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         }
     }
 
+
+
     private val fusedLocationClient: FusedLocationProviderClient by lazy {
         LocationServices.getFusedLocationProviderClient(requireContext().applicationContext)
     }
@@ -65,13 +68,18 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         binding.rvWeather.adapter = adapter
 
 
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+
+
         binding.etSearch.setOnEditorActionListener(object : TextView.OnEditorActionListener {
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     val city = binding.etSearch.text.toString()
-                    if (city.isNotEmpty())
+                    if (city.isNotEmpty()) {
                         viewModel.setEvent(MainContract.Event.OnFetchWeather(city))
-                    else
+                        imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
+                    }else
                         binding.etSearch.error = getString(R.string.invalid_city)
                     return true
                 }

@@ -46,7 +46,7 @@ class MainViewModel @Inject constructor(
      */
     private fun fetchWeather(city:String) {
         viewModelScope.launch {
-                getWeatherUseCase.execute("cairo")
+                getWeatherUseCase.execute(city)
                     .onStart { emit(Resource.Loading) }
                     .collect {
                         when (it) {
